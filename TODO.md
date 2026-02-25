@@ -115,9 +115,3 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ---
 
-# Notes
-
-- Prioritize **Phase 0 → Phase 4** first
-- All experiments must **log configs and seeds** for reproducibility
-- Only add advanced features after baseline is stable
-- Keep all analysis modular under `analysis/`
