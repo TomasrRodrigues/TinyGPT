@@ -7,12 +7,12 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ## Phase 0 — Setup & Infrastructure
 
-- [ ] Create Python virtual environment / `requirements.txt`
-- [ ] Setup project repo with folder structure
-- [ ] Implement logging utility (TensorBoard / WandB / custom)
-- [ ] Implement deterministic seeding utility
-- [ ] Create base configuration YAML (`configs/base.yaml`)
-- [ ] Create experiment launcher (`experiments/run_experiment.py`)
+- [ X ] Create Python virtual environment / `requirements.txt`
+- [ X ] Setup project repo with folder structure
+- [ X ] Implement logging utility (TensorBoard / WandB / custom)
+- [ X ] Implement deterministic seeding utility
+- [ X ] Create base configuration YAML (`configs/base.yaml`)
+- [ X ] Create experiment launcher (`experiments/run_experiment.py`)
 
 ---
 
