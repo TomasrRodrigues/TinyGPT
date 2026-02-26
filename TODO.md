@@ -18,7 +18,7 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ## Phase 1 — Data Pipeline (1 week)
 
-- [ ] Implement tokenizer (character-level)
+- [ X ] Implement tokenizer (character-level)
 - [ ] Implement dataset loader for:
     - WikiText-2
     - TinyStories
