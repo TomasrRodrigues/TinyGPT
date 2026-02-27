@@ -1,6 +1,5 @@
 import re
 
-
 class Tokenizer:
     """Builds a vocabulary from text and converts between strings and integer indices."""
 
