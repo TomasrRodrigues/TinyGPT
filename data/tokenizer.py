@@ -1,4 +1,5 @@
 import re
+import torch
 
 class Tokenizer:
     """Builds a vocabulary from text and converts between strings and integer indices."""
@@ -18,7 +19,8 @@ class Tokenizer:
         return [self.stoi[t] for t in self.tokenize(text)]
 
     def decode(self, indices):
-        """List of token indices back to string."""
+        if torch.is_tensor(indices):
+            indices = indices.tolist()
         return self.separator.join([self.itos[i] for i in indices])
 
     @staticmethod
