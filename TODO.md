@@ -7,24 +7,24 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ## Phase 0 — Setup & Infrastructure
 
-- [ X ] Create Python virtual environment / `requirements.txt`
-- [ X ] Setup project repo with folder structure
-- [ X ] Implement logging utility (TensorBoard / WandB / custom)
-- [ X ] Implement deterministic seeding utility
-- [ X ] Create base configuration YAML (`configs/base.yaml`)
-- [ X ] Create experiment launcher (`experiments/run_experiment.py`)
+- [x] Create Python virtual environment / `requirements.txt`
+- [x] Setup project repo with folder structure
+- [x] Implement logging utility (TensorBoard / WandB / custom)
+- [x] Implement deterministic seeding utility
+- [x] Create base configuration YAML (`configs/base.yaml`)
+- [x] Create experiment launcher (`experiments/run_experiment.py`)
 
 ---
 
 ## Phase 1 — Data Pipeline (1 week)
 
-- [ X ] Implement tokenizer (character-level)
-- [ X ] Implement dataset loader for:
+- [x] Implement tokenizer (character-level)
+- [x] Implement dataset loader for:
     - WikiText-2
     - TinyStories
-- [ ] Implement preprocessing pipeline (sequence batching, context windows)
-- [ ] Verify input-output shapes for sanity check
-- [ ] Create small sample dataset for overfitting tests
+- [x] Implement preprocessing pipeline (sequence batching, context windows)
+- [x] Verify input-output shapes for sanity check
+- [x] Create small sample dataset for overfitting tests
 
 ---
 
