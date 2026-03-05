@@ -30,15 +30,15 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ## Phase 2 — Core Model Implementation (2 weeks)
 
-- [ ] Positional embeddings (vanilla)
-- [ ] Multi-Head Self-Attention (manual implementation)
-    - [ ] Q, K, V projections
-    - [ ] Scaled dot-product attention
-    - [ ] Causal mask
-    - [ ] Head concatenation
-- [ ] Feedforward network (MLP with GELU)
-- [ ] Transformer block (Pre-LN)
-- [ ] Decoder stack
+- [x] Positional embeddings (vanilla)
+- [x] Multi-Head Self-Attention (manual implementation)
+    - [x] Q, K, V projections
+    - [x] Scaled dot-product attention
+    - [x] Causal mask
+    - [x] Head concatenation
+- [x] Feedforward network (MLP with GELU)
+- [x] Transformer block (Pre-LN)
+- [x] Decoder stack
 - [ ] Weight tying (embedding ↔ output projection)
 - [ ] Verify forward pass shapes
 - [ ] Unit tests for block correctness
