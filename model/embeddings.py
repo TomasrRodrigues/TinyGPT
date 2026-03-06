@@ -35,6 +35,3 @@ class PositionalEmbedding(nn.Module):
         pos= self.embedding(positions)
         return pos.unsqueeze(0).expand(B, T, -1)
     
-
-printable = PositionalEmbedding(100, 32)
-print(printable.forward(torch.tensor([[1, 2, 3], [4, 5, 6]])))

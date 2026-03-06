@@ -37,8 +37,10 @@ class MultiHeadAttention(nn.Module):
         # Causal mask to prevent attention to future positions
         self.register_buffer(
             "mask",
-            torch.tril(torch.ones(block_size, block_size))
+            torch.tril(torch.ones(block_size, block_size)).bool()
         )
+
+        self.attn_dropout = nn.Dropout(0.1)
     
     def forward(self, x):
         """
@@ -67,10 +69,13 @@ class MultiHeadAttention(nn.Module):
 
         # Apply causal mask
         mask = self.mask[:T, :T]
-        att = att.masked_fill(mask == 0, float("-inf"))
+        att = att.masked_fill(~mask, float("-inf"))
 
         # Softmax over attention scores
         att = torch.softmax(att, dim=-1)
+
+        att = torch.softmax(att, dim=-1)
+        att = self.attn_dropout(att)
 
         # Weighted sum of values
         out = att @ V

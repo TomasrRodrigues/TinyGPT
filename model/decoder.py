@@ -4,36 +4,45 @@ from .block import TransformerBlock
 
 
 class Decoder(nn.Module):
-    def __init__(self, vocab_size, n_layers, d_model, n_heads, block_size):
+    """
+    Transformer decoder stack.
+
+    This module applies a sequence of Transformer blocks to the
+    input hidden representations. It does not contain embeddings
+    or the language modeling head — those are handled by TinyGPT.
+    """
+
+    def __init__(self, n_layers, d_model, n_heads, block_size):
+        """
+        Initialize the decoder stack.
+
+        Args:
+            n_layers (int): Number of transformer blocks.
+            d_model (int): Embedding / hidden dimension.
+            n_heads (int): Number of attention heads.
+            block_size (int): Maximum sequence length.
+        """
         super().__init__()
 
-        self.token_embedding = nn.Embedding(vocab_size, d_model)
-        self.pos_embedding = nn.Embedding(block_size, d_model)
-        
         self.layers = nn.ModuleList([
             TransformerBlock(d_model, n_heads, block_size)
             for _ in range(n_layers)
         ])
 
-        self.ln_f = nn.LayerNorm(d_model)
-        self.head = nn.Linear(d_model, vocab_size)
 
-    def forward(self, idx):
-        B, T = idx.shape
+    def forward(self, x):
+        """
+        Forward pass through the transformer stack.
 
-        tok_emb = self.token_embedding(idx)
-        pos = torch.arange(0, T, device=idx.device) 
+        Args:
+            x (Tensor): Input hidden states of shape (B, T, d_model)
 
-        pos_emb = self.pos_embedding(pos)
-
-        # tok_emb is (B, T, d_model), pos_emb is (T, d_model)
-        # PyTorch "broadcasts" the positions across the batch
-        x = tok_emb + pos_emb
-
+        Returns:
+            Tensor: Output hidden states of shape (B, T, d_model)
+        """
+        
         for layer in self.layers:
             x = layer(x)
 
-        x = self.ln_f(x)
-        logits = self.head(x)
 
-        return logits
+        return x
