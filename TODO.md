@@ -39,7 +39,7 @@ Tasks are categorized and prioritized for research and implementation rigor.
 - [x] Feedforward network (MLP with GELU)
 - [x] Transformer block (Pre-LN)
 - [x] Decoder stack
-- [ ] Weight tying (embedding ↔ output projection)
+- [x] Weight tying (embedding ↔ output projection)
 - [ ] Verify forward pass shapes
 - [ ] Unit tests for block correctness
 
@@ -47,7 +47,7 @@ Tasks are categorized and prioritized for research and implementation rigor.
 
 ## Phase 3 — Training Loop (1 week)
 
-- [ ] Implement optimizer (AdamW)
+- [x] Implement optimizer (AdamW)
 - [ ] Implement learning rate scheduler (cosine / linear warmup)
 - [ ] Gradient clipping
 - [ ] Checkpoint saving & resuming
