@@ -40,8 +40,8 @@ Tasks are categorized and prioritized for research and implementation rigor.
 - [x] Transformer block (Pre-LN)
 - [x] Decoder stack
 - [x] Weight tying (embedding ↔ output projection)
-- [ ] Verify forward pass shapes
-- [ ] Unit tests for block correctness
+- [x] Verify forward pass shapes
+- [x] Unit tests for block correctness
 
 ---
 
