@@ -48,7 +48,7 @@ Tasks are categorized and prioritized for research and implementation rigor.
 ## Phase 3 — Training Loop (1 week)
 
 - [x] Implement optimizer (AdamW)
-- [ ] Implement learning rate scheduler (cosine / linear warmup)
+- [x] Implement learning rate scheduler (cosine / linear warmup)
 - [ ] Gradient clipping
 - [ ] Checkpoint saving & resuming
 - [ ] Train on tiny batch for overfitting sanity check
